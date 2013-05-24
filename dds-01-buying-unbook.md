@@ -43,6 +43,23 @@ In the case of the Bokhuset example, the missing part was to spell out what a va
 
 _Code_
 
+We can have a pretty good guess of what the code looked beneath the surface of the Bokhuset order system.
+
+Random strings could not be entered as quantities. We can assume that the presentation tier is converting "4" which we type in the order form text to the integer 4 before changing the order.
+
+Most probably there are somewhere a procedure to add an item to an order. We can assume there is some OrderServce class that face the presentation tier, providing the API to place orders
+
+class OrderService {
+	void addBook(String orderId, String productNumber, int quantity)
+}
+
+Most probably this method has a sister method for changing the quantity.
+
+class Order {
+	void changeQuantity(String orderId, String productNumber, int quantity)
+}
+
+
 
 
  
