@@ -2,7 +2,7 @@ __Buying an Un-Encyclopaedia__
 
 _A Reality-based Example to Start with_
 
-A Swedish business in the retail business put an order form online on their web-site. In reality this company was not selling books so, let us say that they were.
+The Swedish bookstore Bokhuset put an order form online on their web-site. Of course, Bokhuset does not really exist, and the company in this story was in a completely different line of business. But to conceal their identiy, let us say that they were selling books.
 
 The order form was the perfectly normal thing you expected. Browsing around the descriptions of books you cut put them in a virtual shopping cart. When finished you went to the checkout where you registered shipping address and paid using a credit card. 
 
