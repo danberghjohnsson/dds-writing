@@ -18,10 +18,15 @@ _What was Wrong_
 
 We can just speculate in what was wrong under the hood. Apparently, the order system sent a transaction to the payment system, probably with the amount "SEK -449" which the payment system interpreted as an order to issue a credit invoice to the customer. Probably the shipping system got a request to pack "-1" Encyclopaedia, a request we can guess it discarded as flawed and dumped some error message on a seldom read log file. The inventory system might have gotten a message to decrease the stock of Encyclopaedias with -1 - which might have caused it to increase the stock with one.
 
-The website order of one "un-Encyclopaedia" might have caused some subtle inconsistency within the business, but it is also possible that all systems would seem consistent to each other. The un-buy could have passed unnoticed until the next stock inventory of the storehouse.
+The website order of one "un-Encyclopaedia" might have caused some subtle inconsistency within the business, but it is also possible that all systems would seem consistent to each other. The buying of un-books could have passed unnoticed until the next stock inventory of the storehouse.
 
+_Application Security_
 
+Nowadays it is not so common that crackers make their way into computer systems via the infrastructure. Routers, firewalls, and servers are nowadays pretty well configured in most enterprises. The new route in is via the applications that are exposed to the rest of the world. Now, these applications, like the online order system, cannot be hidden behind firewalls. The entire point of the online order system is that it is available to any customer at any point of time.
 
+Application Security is concerned with ensuring that your application can not be used in a malicious way that put your enterprise at risk. Validating indata is an important part of this.
+
+_
 
 
  
