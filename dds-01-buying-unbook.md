@@ -4,15 +4,18 @@ _A Reality-based Example to Start with_
 
 The Swedish bookstore Bokhuset put an order form online on their web-site. Of course, Bokhuset does not really exist, and the company in this story was in a completely different line of business. But to conceal their identiy, let us say that they were selling books.
 
-The order form was the perfectly normal thing you expected. Browsing around the descriptions of books you cut put them in a virtual shopping cart. When finished you went to the checkout where you registered shipping address and paid using a credit card. 
+The order form was the perfectly normal thing you would have expected. Browsing around the descriptions of books you could put 
+them in a virtual shopping cart. When finished, you went to the checkout where you registered shipping address and paid using a credit card. 
 
-For example, if you liked Encyclopaedia of Application Security and Domain Driven Design which cost SEK 449 each, you might put that in your cart. If you wanted you could also change the quantity to something else then one. If you liked four copies of the Encyclopaedia you changed the quantity in your cart and upon checkout your credit card would be billed SEK 1796.
+For example, if you liked _Encyclopaedia of Application Security and Domain Driven Design_ which costs SEK 449, 
+you might put that in your cart. If you wanted more that one, you could also change the quantity. To get four copies of 
+the Encyclopaedia you changed the quantity in your cart and upon checkout your credit card would be billed SEK 1796.
 
 One of the security testers probing the system got curious about the quantity field and started fiddling around with it. Trying arbitrary pieces of text gave various error messages on the theme "this is not an integer".
 
 Inspired by this, in a creative moment the security tester tried changing the quantity to "-1". To her surprise there was no error message, neither when changing the quantity, nor when proceeding to checkout. Actually, the system seemed to accept the order completely. 
 
-The day after they got a message from economy that their test customer had gotten a credit invoice on the amount of SEK 449 - as if they had returned a copy of the Encyclopaedia.
+The day after they got a message from economy that their test customer had gotten a credit invoice on the amount of SEK 449 - as if the customer had returned a copy of the Encyclopaedia.
 
 _What was Wrong_
 
