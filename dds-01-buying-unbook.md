@@ -10,7 +10,18 @@ For example, if you liked Encyclopaedia of Application Security and Domain Drive
 
 One of the security testers probing the system got curious about the quantity field and started fiddling around with it. Trying arbitrary pieces of text gave various error messages on the theme "this is not an integer".
 
-Inspired by this, in a creative moment the security tester tried changing the quantity to "-1".
+Inspired by this, in a creative moment the security tester tried changing the quantity to "-1". To her surprise there was no error message, neither when changing the quantity, nor when proceeding to checkout. Actually, the system seemed to accept the order completely. 
+
+The day after they got a message from economy that their test customer had gotten a credit invoice on the amount of SEK 449 - as if they had returned a copy of the Encyclopaedia.
+
+_What was Wrong_
+
+We can just speculate in what was wrong under the hood. Apparently, the order system sent a transaction to the payment system, probably with the amount "SEK -449" which the payment system interpreted as an order to issue a credit invoice to the customer. Probably the shipping system got a request to pack "-1" Encyclopaedia, a request we can guess it discarded as flawed and dumped some error message on a seldom read log file. The inventory system might have gotten a message to decrease the stock of Encyclopaedias with -1 - which might have caused it to increase the stock with one.
+
+The website order of one "un-Encyclopaedia" might have caused some subtle inconsistency within the business, but it is also possible that all systems would seem consistent to each other. The un-buy could have passed unnoticed until the next stock inventory of the storehouse.
+
+
+
 
 
  
