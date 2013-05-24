@@ -29,7 +29,20 @@ Nowadays it is not so common that crackers make their way into computer systems 
 
 Application Security is concerned with ensuring that your application can not be used in a malicious way that put your enterprise at risk. Validating indata is an important part of this.
 
-_
+_Indata Validation and Domain Driven Design_
+
+There is one thing that is often a little bit sloppily overlooked when talking about "indata validation". It is that the word "validation", or "valid", is pretty meaningless standing for itself. You have to explain in what sense the data is "valid". Obviously a valid phone number is something completely different than a valid shipping address.
+
+But even telling which domain (phone or shipping) might not be enough. A phone number can be regarded as valid or invalid in so many different ways. If we want "valid indata" to mean something useful we need to be really precise.
+
+For example we can say that a phone number must follow the format "0 followed by nine or ten digits, first of which may not be a zero" - something that obviously is even better expressed as a regular expression in some format, e g "0[1-9][0-9]^9[0-9]?".
+
+What we have created here is actually a very precise, even mathematical, model of the concept "phone number" from the telephone domain. This is what in Domain Driven Design is called a domain model. Granted, the phone number is just a small part of such a domain model.
+
+In the case of the Bokhuset example, the missing part was to spell out what a valid quantity looked like - that only positive integers makes sense. Most probably the program just accepted an integer.
+
+_Code_
+
 
 
  
